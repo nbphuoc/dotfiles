@@ -5,8 +5,9 @@
   interactive = auto
   status = auto
 [user]
-  name = Dung Huynh
-  email = huynhquangdung@gmail.com
+	name = Phuoc Nguyen
+	email = ba.phuoc.nbp@gmail.com
+	signingKey = 6087F122
 [alias]
   st = status -s
   ci = commit
@@ -75,7 +76,7 @@
 [difftool "diffmerge"]
   cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]
-  cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
 	trustExitCode = false
 
 [difftool "p4mergetool"]
@@ -85,10 +86,18 @@
 	trustExitCode = false
 
 [push]
-  default = current
+	default = current
 [github]
-  user = dunghuynh
+	user = nbphuoc
 [credential]
-  helper = osxkeychain
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /usr/local/MacGPG2/bin/gpg
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

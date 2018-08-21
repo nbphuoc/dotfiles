@@ -100,7 +100,7 @@
   " call dein#add('Shougo/neosnippet.vim')
   " call dein#add('Shougo/neosnippet-snippets')
   " call dein#add('honza/vim-snippets')
-  call dein#add('ujihisa/neco-look')
+  " call dein#add('ujihisa/neco-look')
   call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
   call dein#add('zchee/deoplete-jedi')
   " call dein#add('junegunn/limelight.vim')
@@ -893,5 +893,8 @@
 
   let g:neomake_warning_sign = {'text': '•'}
   let g:neomake_error_sign = {'text': '•'}
+"}}}
 
+" FileType -------------------------------------------------------------------{{{
+autocmd BufEnter *.slm set filetype=slim
 "}}}
