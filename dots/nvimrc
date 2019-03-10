@@ -114,6 +114,7 @@
   call dein#add('sjl/vitality.vim') "(Vit)ality is a plugin that makes (V)im play nicely with (i)Term 2 and (t)mux.
   call dein#add('ryanoasis/vim-devicons')
   " call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+  call dein#add('junegunn/vim-easy-align')
 
 
   if dein#check_install()
@@ -272,6 +273,7 @@
 
 " vim-test
   let test#strategy = "vimux"
+  let test#javascript#jest#executable = 'node --inspect node_modules/.bin/jest --runInBand'
   nmap <silent> <leader>t :TestNearest<CR>
   nmap <silent> <leader>T :TestFile<CR>
   nmap <silent> <leader>g :TestVisit<CR>
@@ -545,6 +547,7 @@
 	" endfunction "}}}
 
   map <silent> - :NERDTreeToggle<CR>
+  map <silent> + :NERDTreeFind<CR>
   " augroup ntinit
   " autocmd FileType nerdtree call s:nerdtreeinit()
   " augroup END
@@ -723,7 +726,6 @@
     call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
     call denite#custom#var('grep', 'separator', ['--'])
     call denite#custom#var('grep', 'final_opts', [])
-
   elseif  executable('pt')
     " Pt command on grep source
     call denite#custom#var('grep', 'command', ['pt'])
@@ -897,4 +899,8 @@
 
 " FileType -------------------------------------------------------------------{{{
 autocmd BufEnter *.slm set filetype=slim
+"}}}
+
+" Align GitHub-flavored Markdown tables -------------------------------------------------------------------{{{
+vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 "}}}
