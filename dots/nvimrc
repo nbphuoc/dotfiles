@@ -274,6 +274,7 @@
 " vim-test
   let test#strategy = "vimux"
   let test#javascript#jest#executable = 'node --inspect node_modules/.bin/jest --runInBand'
+  let test#ruby#cucumber#executable = 'DEVTOOLS=1 ./bin/cucumber'
   nmap <silent> <leader>t :TestNearest<CR>
   nmap <silent> <leader>T :TestFile<CR>
   nmap <silent> <leader>g :TestVisit<CR>

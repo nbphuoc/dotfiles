@@ -165,3 +165,4 @@ nnoremap <leader>s :call <SID>StripTrailingWhitespaces()<cr>
 
 " === }}}
 
+set clipboard+=unnamedplus
