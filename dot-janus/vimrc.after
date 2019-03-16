@@ -113,3 +113,25 @@ let g:user_emmet_settings = {
       \  },
       \}
 "}}}
+
+" gitX mapping
+map <silent> <Leader>g :!gitx <CR><CR>
+
+" Ack Mapping -------------------------------------------------------{{{
+" search current buffers files
+nmap <silent> <Leader>b :LeaderfBuffer<CR>
+
+" search word under cursor
+noremap <silent> <C-F> :<C-U><C-R>=printf("Ack %s ", expand("<cword>"))<CR><CR>
+
+" search under current buffers
+noremap <C-B> :Ack  %<Left><Left>
+
+" recall last search. If the result window is closed, reopen it.
+"
+" noremap <C-R> :<C-U>Leaderf! rg --stayOpen --recall<CR>
+" nmap <silent> <Leader>j :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR><CR>
+
+" search visually selected text literally, don't quit LeaderF after accepting an entry
+" xnoremap gf :<C-U><C-R>=printf("Ack %s ", leaderf#Rg#visual())<CR><CR>
+"}}}

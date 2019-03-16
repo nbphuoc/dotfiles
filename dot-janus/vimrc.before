@@ -1,6 +1,3 @@
 Plugin 'neomake/neomake'
-Plugin 'mxw/vim-jsx'
-Plugin 'pangloss/vim-javascript'
 Plugin 'morhetz/gruvbox'
-Plugin 'ap/vim-css-color'
 Plugin 'mattn/emmet-vim'
