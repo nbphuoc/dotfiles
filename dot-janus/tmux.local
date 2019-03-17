@@ -7,5 +7,5 @@ setw -g mode-keys vi
 bind -T copy-mode-vi 'v' send -X begin-selection
 bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
-bind v split-window -h -c "#{pane_current_path}"
-bind s split-window -v -c "#{pane_current_path}"
+# bind v split-window -h -c "#{pane_current_path}"
+# bind s split-window -v -c "#{pane_current_path}"
