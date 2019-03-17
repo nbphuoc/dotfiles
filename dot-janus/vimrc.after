@@ -1,5 +1,7 @@
 " make cucumber commands execute with DEVTOOLS enabled
 let test#ruby#cucumber#executable = 'DEVTOOLS=1 ./bin/cucumber'
+nmap <silent> <leader>t :TestNearest<CR>
+let test#javascript#jest#executable = 'node --inspect node_modules/.bin/jest --runInBand'
 
 
 if has('nvim')
