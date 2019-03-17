@@ -117,14 +117,14 @@ let g:user_emmet_settings = {
 "}}}
 
 " gitX mapping
-map <silent> <Leader>g :!gitx <CR><CR>
+map <silent> <Leader>g :!fork<CR><CR>
 
 " Ack Mapping -------------------------------------------------------{{{
 " search current buffers files
 nmap <silent> <Leader>b :LeaderfBuffer<CR>
 
 " search word under cursor
-noremap <silent> <C-F> :<C-U><C-R>=printf("Ack %s ", expand("<cword>"))<CR><CR>
+noremap <silent> <C-F> :<C-U><C-R>=printf("Ack %s ", expand("<cword>"))<CR>
 
 " search under current buffers
 noremap <C-B> :Ack  %<Left><Left>
@@ -137,3 +137,17 @@ noremap <C-B> :Ack  %<Left><Left>
 " search visually selected text literally, don't quit LeaderF after accepting an entry
 " xnoremap gf :<C-U><C-R>=printf("Ack %s ", leaderf#Rg#visual())<CR><CR>
 "}}}
+" Bubble single line, requires stpope/vim-unimpaired
+nmap <M-Up> [e
+nmap <M-Down> ]e
+nmap <M-k> [e
+nmap <M-j> ]e
+
+" Bubble multiple lines, requires stpope/vim-unimpaired
+vmap <M-k> [egv
+vmap <M-j> ]egv
+
+" Traverse text in insert mode
+inoremap <M-h> <C-o>b
+inoremap <M-l> <C-o>w
+
