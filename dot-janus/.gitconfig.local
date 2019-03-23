@@ -1,0 +1,17 @@
+[user]
+	name = Phuoc Nguyen
+	email = ba.phuoc.nbp@gmail.com
+[rerere]
+	enabled = true
+[diff]
+	tool = diffmerge
+[merge]
+	tool = diffmerge
+  summary = true
+  verbosity = 1
+	conflictstyle = diff3
+[difftool "diffmerge"]
+  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = false
