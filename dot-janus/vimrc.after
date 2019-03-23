@@ -50,7 +50,7 @@ inoremap <C-S> <C-O>:update<CR>
 noremap <leader>a :Neoformat<CR>
 
 let g:neoformat_only_msg_on_error = 1
-let g:neoformat_enabled_javascript = ['prettiereslint']
+let g:neoformat_enabled_javascript = ['eslint_d']
 autocmd! BufWritePost * Neomake
 " autocmd BufWritePre *.js,*.rb Neoformat
 " Disable the annoying rubocop
@@ -120,11 +120,17 @@ let g:user_emmet_settings = {
 map <silent> <Leader>g :!fork<CR><CR>
 
 " Ack Mapping -------------------------------------------------------{{{
+" Do not open first result in current buffer
+
+cnoreabbrev Ack Ack!
+nnoremap <Leader>f :Ack!<Space>
+
+
 " search current buffers files
 nmap <silent> <Leader>b :LeaderfBuffer<CR>
 
 " search word under cursor
-noremap <silent> <C-F> :<C-U><C-R>=printf("Ack %s ", expand("<cword>"))<CR>
+noremap <silent> <C-F> :<C-U><C-R>=printf("Ack! %s ", expand("<cword>"))<CR><CR>
 
 " search under current buffers
 noremap <C-B> :Ack  %<Left><Left>

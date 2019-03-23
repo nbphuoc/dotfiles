@@ -1,3 +1,4 @@
 Plugin 'neomake/neomake'
 Plugin 'morhetz/gruvbox'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'mattn/emmet-vim'
